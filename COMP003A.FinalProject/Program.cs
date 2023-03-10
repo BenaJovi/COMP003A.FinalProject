@@ -21,7 +21,7 @@ namespace COMP003A.FinalProject
             {
                 Console.WriteLine($" Welcome! {FirstName}{lastName} to BenaFit!\n We need some more info to build your profile.");
             }
-
+             
             do
             {
                 YearBorn = NInputAnswer("Enter your the year you were born: ");
