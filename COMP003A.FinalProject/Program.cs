@@ -38,7 +38,7 @@ namespace COMP003A.FinalProject
             } while (!checkBirthYear(BirthYear));
             age = 2023 - BirthYear;
             Console.WriteLine($"Looks like you are {age} this year.");
-             
+              
             do
             {
                 Gender = WInputAnswer(" What is your gender? Please enter (M,F, or N): ", "Please only use letters.");
