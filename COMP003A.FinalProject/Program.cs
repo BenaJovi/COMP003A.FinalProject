@@ -60,25 +60,29 @@ namespace COMP003A.FinalProject
             
             
             SectionMessageSeparator("There will now be 10 questions you need to answer in order for use to complete our plan for you.");
-            Console.ForegroundColor= ConsoleColor.Cyan;
+            Console.ForegroundColor= ConsoleColor.DarkMagenta;
             // Question array
  /*Q1*/    Wheight = NInputAnswer("Please enter your height in Inches:");
             Height= Convert.ToInt16(Wheight);
  /*Q2*/    Wweight = NInputAnswer("\nPlease enter your weight in pounds:");
             weight = Convert.ToInt16(Wweight);
  /*Q3*/    PhysicallyActive = WInputAnswer("\nWould you say you are physically active? Answer:");
- /*Q4*/    DailyWalk = WInputAnswer("\nDo you walk daily? Answer: ");
+ /*Q4*/    DailyWalk = WInputAnswer("\nDo you walk daily? Answer:");
  /*Q5*/    Wmiles = NInputAnswer("\nOn average how many miles do you walk in a day? Answer:");
             miles = Convert.ToInt16(Wmiles);
  /*Q6*/    Wfastfood = NInputAnswer("\nHow often do you eat fastfood out of the week? Answer:");
             FastFood = Convert.ToInt16(Wfastfood);
  /*Q7*/    Wcalorieintake = NInputAnswer("\nHow many calories do you eat in a day:");
             CalorieIntake = Convert.ToInt16(Wcalorieintake);
- /*Q8*/    LoseWeight = WInputAnswer("\nIs your goal to lose weight? Answer: ");
+ /*Q8*/    LoseWeight = WInputAnswer("\nIs your goal to lose weight? Answer:");
  /*Q9*/    Wdays = NInputAnswer("\nHow many days out of the week are you avaible to work out? Answer:");
             days= Convert.ToInt16(Wdays);  
 
             string[] strArray = new string[] { Wweight, Wweight, PhysicallyActive, DailyWalk, Wmiles, Wfastfood, Wcalorieintake, LoseWeight, Wdays };
+        
+            
+
+
 
 /*Q10*/     Console.Write("\nOn a scale from 1-10 (1 being poor and 10 being super healthy) how healthy do you think you are? Answer:");
             Wscale= Console.ReadLine();
@@ -87,40 +91,57 @@ namespace COMP003A.FinalProject
             switch(scale)
             {
                 case 1:
-                    Console.WriteLine("");
+                    Console.WriteLine($"\n{FirstName} here is was the team at BenaFit thinks is best for you.\nIt looks like we need to make some serious health changes.");
+                    Console.WriteLine($"Lets try excercising {Wdays} times a week. Right now you are at {Wweight} lets try cutting 40lbs.\n Also, by increasing your daily miles,");
+                    Console.WriteLine($"then cutting the amount of fast food and calories you are consuming will make it easier to lose weight.\nThank you {FirstName} {lastName} for using BenaFit! Please report back in 6 months. Stay healthy!");
                     break;
                 case 2:
-                    Console.WriteLine("");
+                    Console.WriteLine($"\n{FirstName} here is was the team at BenaFit thinks is best for you.\nIt looks like we need to start taking things more serious.");
+                    Console.WriteLine($"Lets try excercising {Wdays} times a week. Right now you are at {Wweight} lets try cutting 35lbs. Also, by increasing your daily miles,");
+                    Console.WriteLine($"then cutting the amount of fast food and calories you are consuming will make it easier to lose weight.\nThank you {FirstName} {lastName} for using BenaFit! Please report back in 6 months. Stay healthy!");
                     break;
                 case 3:
-                    Console.WriteLine("");
+                    Console.WriteLine($"\n{FirstName} here is was the team at BenaFit thinks is best for you.\nIt looks like you are aware of your current health state and just need a push.");
+                    Console.WriteLine($"So lets try excercising {Wdays} times a week. Right now you are at {Wweight} lets try cutting 30lbs. Also, by increasing your daily miles,");
+                    Console.WriteLine($"then cutting the amount of fast food and calories you are consuming will make it easier to lose weight.\nThank you {FirstName} {lastName} for using BenaFit! Please report back in 6 months. Stay healthy!");
                     break;
                 case 4:
-                    Console.WriteLine("");
+                    Console.WriteLine($"\n{FirstName} here is was the team at BenaFit thinks is best for you.\nIt looks like we need to make some serious health changes.");
+                    Console.WriteLine($"Lets try excercising {Wdays} times a week. Right now you are at {Wweight} lets try cutting 25lbs. Also, by increasing your daily miles,");
+                    Console.WriteLine($"then cutting the amount of fast food and calories you are consuming will make it easier to lose weight.\nThank you {FirstName} {lastName} for using BenaFit! Please report back in 6 months. Stay healthy!");
                     break;
                 case 5:
-                    Console.WriteLine("");
+                    Console.WriteLine($"\n{FirstName} here is was the team at BenaFit thinks is best for you.\nIt looks like we are right in the middle and we want to be at around 7.");
+                    Console.WriteLine($"Lets try excercising {Wdays} times a week. Right now you are at {Wweight} lets try cutting 20lbs. If we cut down on fast food");
+                    Console.WriteLine($"and consume healthy calories it will make it easier to lose weight. Also, it is important to stay consisent.\nThank you {FirstName} {lastName} for using BenaFit! Please report back in 3 months. Stay healthy!");
                     break;
                 case 6:
-                    Console.WriteLine("");
+                    Console.WriteLine($"\n{FirstName} here is was the team at BenaFit thinks is best for you.\nAlright! Good job you are above average but that doesnt mean we cant improve.");
+                    Console.WriteLine($"How about we train hard {Wdays} times a week. Right now you are at {Wweight} lets try cutting 10lbs.Its easy to go and eat fast food but lets try meal prepping.");
+                    Console.WriteLine($"Being in control of what you eat and how much eat will accelerate reults and get you looking good.\nThank you {FirstName} {lastName} for using BenaFit! Please report back in 6 months. Stay healthy!");
                     break;
                 case 7:
-                    Console.WriteLine("");
+                    Console.WriteLine($"\n{FirstName} here is was the team at BenaFit thinks is best for you.\nYou are awesome! Great job on keeping yourself healthy, this is right where we want to be.");
+                    Console.WriteLine($"For you {Wdays} times a week is best and since we are at {weight} lets try cutting 5lbs. The easiest way to maintain this level is");
+                    Console.WriteLine($"cutting out unhealthy food options and increasing our healthy calories.\nThank you {FirstName} {lastName} for using BenaFit! Please report back in 6 months. Stay healthy!");
                     break;
                 case 8:
-                    Console.WriteLine("");
+                    Console.WriteLine($"\n{FirstName} here is was the team at BenaFit thinks is best for you.\nAmazing! You are very healthy.");
+                    Console.WriteLine($"Since you are healthy lets stay with working out {Wdays} a week. Then if you arent already watching your food intake");
+                    Console.WriteLine($"we suggest that you start, since its the easiet way to maintain your health.\nThank you {FirstName} {lastName} for using BenaFit! Please report back in 6 months. Stay healthy!");
                     break;
                 case 9:
-                    Console.WriteLine("");
+                    Console.WriteLine($"\n{FirstName} here is was the team at BenaFit thinks is best for you.\nWOW! It is amazing to see people this healhty.");
+                    Console.WriteLine($"Well it looks like you know what you are doing. All we can say is keep up the good work and always try to improve yourself.");
+                    Console.WriteLine($"Here's a tip, try creating routine and following this routine.\nThank you {FirstName} {lastName} for using BenaFit! Please report back in 6 months. Stay healthy!");
                     break;
                 case 10:
-                    Console.WriteLine("");
+                    Console.WriteLine($"\n{FirstName} here is was the team at BenaFit thinks is best for you.\nWe are speechless! You are a superhuman.");
+                    Console.WriteLine($"The BenaFit team applaud your hard work and we will support you at all times. Theres isnt much for us to reoport back,");
+                    Console.WriteLine($"but its great to see you are still trying to find ways to improve.\nThank you {FirstName} {lastName} for using BenaFit! Please report back in 6 months. Stay healthy!");
                     break;
             }
      
-
-
-
         }
         /// <summary>
         /// Section Header 
