@@ -115,16 +115,21 @@ namespace COMP003A.FinalProject
                 string[] QuestArray = new string[] { Wheight, Wweight, PhysicallyActive, DailyWalk, Wmiles, Wfastfood, Wcalorieintake, LoseWeight, Wdays };
 
                 SectionIntroSeparator($"Profile Report");
+                Console.ForegroundColor= ConsoleColor.White;
                 Console.WriteLine($"User:{FirstName} {lastName}\nAge:{age}\nGender:{Gender}");
                 printArray(QuestArray);
+
+                SectionMessageSeparator("This will be the last question and the evaluation will  be complete.");
 
 
                 // initiates a switch statement that will return advice based on what your current health self evaluation is.
                 /*Q10*/
+                Console.ForegroundColor= ConsoleColor.DarkMagenta;
                 Console.Write("\nOn a scale from 1-10 (1 being poor and 10 being super healthy) how healthy do you think you are? Answer:");
                 Wscale = Console.ReadLine();
                 scale = Convert.ToInt16(Wscale);
                 // the start of the switch statement 1-10 
+                Console.ForegroundColor= ConsoleColor.Cyan;
                 switch (scale) 
                 {
                     case 1:
@@ -145,7 +150,7 @@ namespace COMP003A.FinalProject
                     case 4:
                         Console.WriteLine($"\n{FirstName} here is was the team at BenaFit thinks is best for you.\nIt looks like we need to make some serious health changes." +
                         $"Lets try excercising {Wdays} times a week. Right now you are at {Wweight} lets try cutting 25lbs. Also, by increasing your daily miles," +
-                        $"then cutting the amount of fast food and calories you are consuming will make it easier to lose weight.\nThank you {FirstName} {lastName} for using BenaFit! Please report back in 6 months. Stay healthy!");
+                        $"then cutting the amount of fast food and calories\n you are consuming will make it easier to lose weight.\nThank you {FirstName} {lastName} for using BenaFit! Please report back in 6 months. Stay healthy!");
                         break;
                     case 5:
                         Console.WriteLine($"\n{FirstName} here is was the team at BenaFit thinks is best for you.\nIt looks like we are right in the middle and we want to be at around 7.\n" +
@@ -155,7 +160,7 @@ namespace COMP003A.FinalProject
                     case 6:
                         Console.WriteLine($"\n{FirstName} here is was the team at BenaFit thinks is best for you.\nAlright! Good job you are above average but that doesnt mean we cant improve.\n" +
                         $"How about we train hard {Wdays} times a week. Right now you are at {Wweight} lets try cutting 10lbs.\nIts easy to go and eat fast food but lets try meal prepping." +
-                        $"Being in control of what you eat and how much eat will accelerate reults and get you looking good.\nThank you {FirstName} {lastName} for using BenaFit! Please report back in 6 months. Stay healthy!");
+                        $"Being in control of what you eat and how much eat will\naccelerate reults and get you looking good.\nThank you {FirstName} {lastName} for using BenaFit! Please report back in 6 months. Stay healthy!");
                         break;
                     case 7:
                         Console.WriteLine($"\n{FirstName} here is was the team at BenaFit thinks is best for you.\nYou are awesome! Great job on keeping yourself healthy, this is right where we want to be.\n" +
@@ -178,7 +183,6 @@ namespace COMP003A.FinalProject
                         $"but its great to see you are still trying to find ways to improve.\nThank you {FirstName} {lastName} for using BenaFit! Please report back in 6 months. Stay healthy!");
                         break;
                 }
-
             }
         }
         /// <summary>
