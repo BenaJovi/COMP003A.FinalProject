@@ -58,7 +58,7 @@ namespace COMP003A.FinalProject
             }
              
             
-            
+             
             SectionMessageSeparator("There will now be 10 questions you need to answer in order for use to complete our plan for you.");
             Console.ForegroundColor= ConsoleColor.DarkMagenta;
             // Question array
