@@ -119,13 +119,13 @@ namespace COMP003A.FinalProject
                 Console.WriteLine($"User:{FirstName} {lastName}\nAge:{age}\nGender:{Gender}");
                 printArray(QuestArray); 
 
-                SectionMessageSeparator("This will be the last question and the evaluation will  be complete.");
+                SectionMessageSeparator("\t\tThis will be the last question and the evaluation will  be complete.");
 
 
                 // initiates a switch statement that will return advice based on what your current health self evaluation is.
                 /*Q10*/
                 Console.ForegroundColor= ConsoleColor.DarkMagenta;
-                Console.Write("\nOn a scale from 1-10 (1 being poor and 10 being super healthy) how healthy do you think you are? Answer:");
+                Console.Write("On a scale from 1-10 (1 being poor and 10 being super healthy) how healthy do you think you are? Answer:");
                 Wscale = Console.ReadLine();
                 scale = Convert.ToInt16(Wscale);
                 // the start of the switch statement 1-10 
