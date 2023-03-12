@@ -12,77 +12,132 @@ namespace COMP003A.FinalProject
     {
         static void Main(string[] args)
         {
+            SectionIntroSeparator("Welcome to BenaFit");
+            Console.ForegroundColor = ConsoleColor.DarkMagenta;
             //Variables for first section
             string FirstName; string lastName; string YearBorn; string Gender;
             char Gletter;
             int BirthYear; int age;
             // Variables for Questions,
-            string PhysicallyActive; string DailyWalk; string LoseWeight; string random;
+            string PhysicallyActive; string DailyWalk; string LoseWeight; string Wdays;
             // convert to int
-            string Wheight; string Wweight;
-            
-            int FastFood; int Height; int weight; int scale; int days;
+            string Wheight; string Wweight; string Wcalorieintake; string Wfastfood; string Wmiles; string Wscale;
 
-            FirstName = WInputAnswer("Please enter your first name: ", "ERROR:Invalid Name.Please only use letters.");
-            lastName = WInputAnswer("Please enter your last name: ", "ERROR:Invalid Name.Please only use letters.");
+            int FastFood; int Height; int weight; int scale; int days; int CalorieIntake; int miles;
+
+            FirstName = WInputAnswer("Please enter your first name: ");
+            lastName = WInputAnswer("Please enter your last name: ");
 
             if(FirstName != lastName ) 
             {
-                Console.WriteLine($"Welcome {FirstName}{lastName} to BenaFit!\nWe need some more info to build your profile.");
+                do
+                {
+                    YearBorn = NInputAnswer("Enter your the year you were born: ");
+                    BirthYear = Convert.ToInt16(YearBorn);
+                } while (!checkBirthYear(BirthYear));
+                age = 2023 - BirthYear;
+                do
+                {
+                    Gender = WInputAnswer("What is your gender? Please enter (M,F, or N):");
+                    if (InputCheck(Gender))
+                    {
+                        Gender = Gender.ToLower();
+                        if (Gender == "m" || Gender == "f" || Gender == "n")
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            Console.ForegroundColor= ConsoleColor.DarkRed;
+                            Console.WriteLine("In order to go to the next question we need to know your gender\nif you do not wish to disclose this inforamtion please select N.\n");
+                            Console.ForegroundColor= ConsoleColor.DarkMagenta;
+                        }
+                    }
+                } while (true);
+                Gletter = Convert.ToChar(Gender);
             }
              
-            do
-            {
-                YearBorn = NInputAnswer("Enter your the year you were born: ");
-                BirthYear = Convert.ToInt16(YearBorn);
-            } while (!checkBirthYear(BirthYear));
-            age = 2023 - BirthYear;
-            Console.WriteLine($"Looks like you are {age} this year.");
-              
-            do
-            {
-                Gender = WInputAnswer(" What is your gender? Please enter (M,F, or N): ", "Please only use letters.");
-                if (InputCheck(Gender))
-                {
-                    Gender = Gender.ToLower();
-                    if (Gender == "m" || Gender == "f" || Gender == "n")
-                    {
-                        break;
-                    }
-                    else
-                    {
-                        Console.WriteLine("In order to go to the next question we need to know your gender\n if you do not wish to disclose this inforamtion please select N.");
-                    }
-                }
-            } 
-            while (true);
-            Gletter=Convert.ToChar(Gender);
-
+            
+            
+            SectionMessageSeparator("There will now be 10 questions you need to answer in order for use to complete our plan for you.");
+            Console.ForegroundColor= ConsoleColor.Cyan;
             // Question array
-            Wheight = NInputAnswer("Please enter your height in Inches: ");
-           // Height= Convert.ToInt16(Wheight);
-            Wweight = NInputAnswer("Please enter your weight in pounds: ");
-            // weight = Convert.ToInt16(Wweight);
-            PhysicallyActive = WInputAnswer("Would you say you are physically active?", "Please only use letters.");
-            DailyWalk = WInputAnswer("Do you walk daily?", "Please only use letters.");
-            random = NInputAnswer("On average how many miles do you walk in a day?");
-            LoseWeight = WInputAnswer("Are you willing to put the effort and lose weight?", "Please only use letters.");
-            
+ /*Q1*/    Wheight = NInputAnswer("Please enter your height in Inches:");
+            Height= Convert.ToInt16(Wheight);
+ /*Q2*/    Wweight = NInputAnswer("\nPlease enter your weight in pounds:");
+            weight = Convert.ToInt16(Wweight);
+ /*Q3*/    PhysicallyActive = WInputAnswer("\nWould you say you are physically active? Answer:");
+ /*Q4*/    DailyWalk = WInputAnswer("\nDo you walk daily? Answer: ");
+ /*Q5*/    Wmiles = NInputAnswer("\nOn average how many miles do you walk in a day? Answer:");
+            miles = Convert.ToInt16(Wmiles);
+ /*Q6*/    Wfastfood = NInputAnswer("\nHow often do you eat fastfood out of the week? Answer:");
+            FastFood = Convert.ToInt16(Wfastfood);
+ /*Q7*/    Wcalorieintake = NInputAnswer("\nHow many calories do you eat in a day:");
+            CalorieIntake = Convert.ToInt16(Wcalorieintake);
+ /*Q8*/    LoseWeight = WInputAnswer("\nIs your goal to lose weight? Answer: ");
+ /*Q9*/    Wdays = NInputAnswer("\nHow many days out of the week are you avaible to work out? Answer:");
+            days= Convert.ToInt16(Wdays);  
 
+            string[] strArray = new string[] { Wweight, Wweight, PhysicallyActive, DailyWalk, Wmiles, Wfastfood, Wcalorieintake, LoseWeight, Wdays };
 
+/*Q10*/     Console.Write("\nOn a scale from 1-10 (1 being poor and 10 being super healthy) how healthy do you think you are? Answer:");
+            Wscale= Console.ReadLine();
+            scale=Convert.ToInt16(Wscale);
 
-
-
-
-            string[] strArray = new string[] { Wweight, Wweight, PhysicallyActive, DailyWalk, random, LoseWeight };
-           
-            
+            switch(scale)
+            {
+                case 1:
+                    Console.WriteLine("");
+                    break;
+                case 2:
+                    Console.WriteLine("");
+                    break;
+                case 3:
+                    Console.WriteLine("");
+                    break;
+                case 4:
+                    Console.WriteLine("");
+                    break;
+                case 5:
+                    Console.WriteLine("");
+                    break;
+                case 6:
+                    Console.WriteLine("");
+                    break;
+                case 7:
+                    Console.WriteLine("");
+                    break;
+                case 8:
+                    Console.WriteLine("");
+                    break;
+                case 9:
+                    Console.WriteLine("");
+                    break;
+                case 10:
+                    Console.WriteLine("");
+                    break;
+            }
+     
 
 
 
         }
-        
+        /// <summary>
+        /// Section Header 
+        /// </summary>
+        /// <param name="section"></param>
+        static void SectionIntroSeparator(string section)
+        {
+            
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("".PadRight(120, '~') + $"\n\t\t\t\t\t\t{section}\n" + "".PadRight(120, '~'));
+        }
+        static void SectionMessageSeparator(string section)
+        {
 
+            Console.ForegroundColor =ConsoleColor.Blue;
+            Console.WriteLine("".PadRight(120, '~') + $"\n\t{section} \n" + "".PadRight(120, '~'));
+        }
         /// <summary>
         /// Checks Words
         /// </summary>
@@ -95,6 +150,7 @@ namespace COMP003A.FinalProject
             string pattern = "^[A-Za-z]+$";
             if (Regex.IsMatch(Name,pattern))
             {
+
                 return true;
             } 
             else
@@ -132,7 +188,9 @@ namespace COMP003A.FinalProject
             }
             else
             {
+                Console.ForegroundColor = ConsoleColor.DarkRed;
                 Console.WriteLine("Sorry that date is invalid. Pleae enter a date from 1900-2023. Try again.");
+                Console.ForegroundColor = ConsoleColor.DarkMagenta;
                 return false;
             }
         }
@@ -143,7 +201,7 @@ namespace COMP003A.FinalProject
         /// <param name="question"></param>
         /// <param name="error"></param>
         /// <returns></returns>
-        static string WInputAnswer(string question, string error)
+        static string WInputAnswer(string question)
         {
             string answer;
             while (true)
@@ -156,7 +214,9 @@ namespace COMP003A.FinalProject
                 }
                 else
                 {
-                    Console.WriteLine(error);
+                   Console.ForegroundColor = ConsoleColor.DarkRed;
+                   Console.WriteLine("ERROR: Please only use letters.");
+                   Console.ForegroundColor=ConsoleColor.DarkMagenta;
                 }
             }
         }
@@ -178,11 +238,12 @@ namespace COMP003A.FinalProject
                 }
                 else
                 {
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
                     Console.WriteLine("Please only use numbers.");
+                    Console.ForegroundColor = ConsoleColor.DarkMagenta;
                 }
             }
         }
-
     }
 }
 
