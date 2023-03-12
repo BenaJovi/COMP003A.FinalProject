@@ -249,7 +249,7 @@ namespace COMP003A.FinalProject
                    Console.ForegroundColor=ConsoleColor.DarkMagenta;
                 }
             }
-        }
+        } 
         /// <summary>
         /// Verifies Question answer
         /// </summary>
