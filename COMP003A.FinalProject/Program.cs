@@ -120,7 +120,7 @@ namespace COMP003A.FinalProject
                 printArray(QuestArray); 
 
                 SectionMessageSeparator("\t\tThis will be the last question and the evaluation will  be complete.");
-
+                 
 
                 // initiates a switch statement that will return advice based on what your current health self evaluation is.
                 /*Q10*/
