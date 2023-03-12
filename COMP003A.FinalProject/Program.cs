@@ -1,7 +1,7 @@
 ﻿/* 
- * Author:
- * Course:
- * Purpose: 
+ * Author:Jovani Benavides 
+ * Course:COMP-003A
+ * Purpose:Self check health app "BenaFit" 
  */
 
 using System.Text.RegularExpressions;
@@ -18,26 +18,33 @@ namespace COMP003A.FinalProject
             string FirstName; string lastName; string YearBorn; string Gender;
             char Gletter;
             int BirthYear; int age;
+
             // Variables for Questions,
             string PhysicallyActive; string DailyWalk; string LoseWeight; string Wdays;
+
             // convert to int
             string Wheight; string Wweight; string Wcalorieintake; string Wfastfood; string Wmiles; string Wscale;
-
+            
             int FastFood; int Height; int weight; int scale; int days; int CalorieIntake; int miles;
 
+            //Ask the user for their name in only letters.
             FirstName = WInputAnswer("Please enter your first name: ");
             lastName = WInputAnswer("Please enter your last name: ");
-
+            
+            // As long as the first and last name do not equal the codes will continue. 
             if(FirstName != lastName ) 
             {
                 do
                 {
+                    // verifies that a nummber values was entered and if the value was from 1900-2023
                     YearBorn = NInputAnswer("Enter your the year you were born: ");
                     BirthYear = Convert.ToInt16(YearBorn);
                 } while (!checkBirthYear(BirthYear));
+                // will calculte how old you are in the year 2023
                 age = 2023 - BirthYear;
                 do
                 {
+                    // asks for your gender and will only take m,f, or n
                     Gender = WInputAnswer("What is your gender? Please enter (M,F, or N):");
                     if (InputCheck(Gender))
                     {
@@ -48,19 +55,23 @@ namespace COMP003A.FinalProject
                         }
                         else
                         {
+                            // allows the user to retry and enter a correct answer.
                             Console.ForegroundColor= ConsoleColor.DarkRed;
-                            Console.WriteLine("In order to go to the next question we need to know your gender\nif you do not wish to disclose this inforamtion please select N.\n");
+                            Console.WriteLine("In order to go to the next question we need to know your gender. enter M,F, or N\nif you do not wish to disclose this inforamtion please select N.\n");
                             Console.ForegroundColor= ConsoleColor.DarkMagenta;
                         }
                     }
                 } while (true);
+                // stores letter entered as the correct gender
                 Gletter = Convert.ToChar(Gender);
             }
              
             
-             
+             // Question secction
+
             SectionMessageSeparator("There will now be 10 questions you need to answer in order for use to complete our plan for you.");
             Console.ForegroundColor= ConsoleColor.DarkMagenta;
+
             // Question array
  /*Q1*/    Wheight = NInputAnswer("Please enter your height in Inches:");
             Height= Convert.ToInt16(Wheight);
@@ -80,24 +91,12 @@ namespace COMP003A.FinalProject
 
             string[] QuestArray = new string[] { Wheight, Wweight, PhysicallyActive, DailyWalk, Wmiles, Wfastfood, Wcalorieintake, LoseWeight, Wdays };
             printArray(QuestArray);
-            /*string[] strAnswers = new string[8];
-            strAnswers[0] = Wheight;
-            strAnswers[1] = Wweight;
-            strAnswers[2] = PhysicallyActive;
-            strAnswers[3] = DailyWalk;
-            strAnswers[4] = Wmiles;
-            strAnswers[5] = Wfastfood;
-            strAnswers[6] = Wcalorieintake;
-            strAnswers[7] = LoseWeight;
-            strAnswers[8] = Wdays;
-            */
-
-
-
+            
+            // initiates a switch statement that will return advice based on what your current health self evaluation is.
 /*Q10*/     Console.Write("\nOn a scale from 1-10 (1 being poor and 10 being super healthy) how healthy do you think you are? Answer:");
             Wscale= Console.ReadLine();
             scale=Convert.ToInt16(Wscale);
-
+             // the start of the switch statement 1-10 
             switch(scale)
             {
                 case 1:
@@ -169,7 +168,7 @@ namespace COMP003A.FinalProject
             Console.WriteLine("".PadRight(120, '~') + $"\n\t{section} \n" + "".PadRight(120, '~'));
         }
         /// <summary>
-        /// Checks Words
+        /// Checks to see if only words are being enterd. 
         /// </summary>
         /// <param name="Name"></param>
         /// <returns></returns>
@@ -189,7 +188,7 @@ namespace COMP003A.FinalProject
             }
         }
         /// <summary>
-        /// Checks Numbers
+        /// Checks to see if only numbers are  being entered.
         /// </summary>
         /// <param name="number"></param>
         /// <returns></returns>
@@ -206,7 +205,7 @@ namespace COMP003A.FinalProject
             }
         }
         /// <summary>
-        /// Birth
+        /// Checks if the Birthyear is valid
         /// </summary>
         /// <param name="BirthYear"></param>
         /// <returns></returns>
@@ -226,7 +225,7 @@ namespace COMP003A.FinalProject
         }
 
         /// <summary>
-        /// Answers
+        /// Will out put an Error notice if numbers or special characters were entered.
         /// </summary>
         /// <param name="question"></param>
         /// <param name="error"></param>
@@ -249,9 +248,9 @@ namespace COMP003A.FinalProject
                    Console.ForegroundColor=ConsoleColor.DarkMagenta;
                 }
             }
-        } 
+        }
         /// <summary>
-        /// Verifies Question answer
+        /// Will out put an Error notice if letters or special characters were entered.
         /// </summary>
         /// <param name="question"></param>
         /// <returns></returns>
@@ -274,6 +273,7 @@ namespace COMP003A.FinalProject
                 }
             }
         }
+        // Prints out the answers to the questions as a report. NOTE: ADD NAME AGE GENDER
         static void printArray(string[] arr)
         {
             SectionIntroSeparator("Profile Report");
