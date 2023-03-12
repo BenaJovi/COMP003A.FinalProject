@@ -78,9 +78,19 @@ namespace COMP003A.FinalProject
  /*Q9*/    Wdays = NInputAnswer("\nHow many days out of the week are you avaible to work out? Answer:");
             days= Convert.ToInt16(Wdays);  
 
-            string[] strArray = new string[] { Wweight, Wweight, PhysicallyActive, DailyWalk, Wmiles, Wfastfood, Wcalorieintake, LoseWeight, Wdays };
-        
-            
+            string[] QuestArray = new string[] { Wheight, Wweight, PhysicallyActive, DailyWalk, Wmiles, Wfastfood, Wcalorieintake, LoseWeight, Wdays };
+            printArray(QuestArray);
+            /*string[] strAnswers = new string[8];
+            strAnswers[0] = Wheight;
+            strAnswers[1] = Wweight;
+            strAnswers[2] = PhysicallyActive;
+            strAnswers[3] = DailyWalk;
+            strAnswers[4] = Wmiles;
+            strAnswers[5] = Wfastfood;
+            strAnswers[6] = Wcalorieintake;
+            strAnswers[7] = LoseWeight;
+            strAnswers[8] = Wdays;
+            */
 
 
 
@@ -155,7 +165,6 @@ namespace COMP003A.FinalProject
         }
         static void SectionMessageSeparator(string section)
         {
-             
             Console.ForegroundColor =ConsoleColor.Blue;
             Console.WriteLine("".PadRight(120, '~') + $"\n\t{section} \n" + "".PadRight(120, '~'));
         }
@@ -264,6 +273,15 @@ namespace COMP003A.FinalProject
                     Console.ForegroundColor = ConsoleColor.DarkMagenta;
                 }
             }
+        }
+        static void printArray(string[] arr)
+        {
+            SectionIntroSeparator("Profile Report");
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.WriteLine($"Answers:{arr[i]}");
+            }
+            Console.ForegroundColor = ConsoleColor.DarkMagenta;
         }
     }
 }
