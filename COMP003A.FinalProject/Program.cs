@@ -125,7 +125,7 @@ namespace COMP003A.FinalProject
                 Wscale = Console.ReadLine();
                 scale = Convert.ToInt16(Wscale);
                 // the start of the switch statement 1-10 
-                switch (scale)
+                switch (scale) 
                 {
                     case 1:
                         Console.WriteLine($"\n{FirstName} here is was the team at BenaFit thinks is best for you.\nIt looks like we need to make some serious health changes." +
@@ -140,7 +140,7 @@ namespace COMP003A.FinalProject
                     case 3:
                         Console.WriteLine($"\n{FirstName} here is was the team at BenaFit thinks is best for you.\nIt looks like you are aware of your current health state and just need a push.\n" +
                         $"So lets try excercising {Wdays} times a week. Right now you are at {Wweight} lets try cutting 30lbs.\nAlso, by increasing your daily miles," +
-                        $"then cutting the amount of fast food and calories you are consuming will make it easier to lose weight.\nThank you {FirstName} {lastName} for using BenaFit! Please report back in 6 months. Stay healthy!");
+                        $"then cutting the amount of fast food and calories you are consuming will make it\n easier to lose weight.\nThank you {FirstName} {lastName} for using BenaFit! Please report back in 6 months. Stay healthy!");
                         break;
                     case 4:
                         Console.WriteLine($"\n{FirstName} here is was the team at BenaFit thinks is best for you.\nIt looks like we need to make some serious health changes." +
