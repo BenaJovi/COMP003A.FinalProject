@@ -117,7 +117,7 @@ namespace COMP003A.FinalProject
                 SectionIntroSeparator($"Profile Report");
                 Console.ForegroundColor= ConsoleColor.White;
                 Console.WriteLine($"User:{FirstName} {lastName}\nAge:{age}\nGender:{Gender}");
-                printArray(QuestArray);
+                printArray(QuestArray); 
 
                 SectionMessageSeparator("This will be the last question and the evaluation will  be complete.");
 
