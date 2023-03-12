@@ -134,7 +134,7 @@ namespace COMP003A.FinalProject
         }
         static void SectionMessageSeparator(string section)
         {
-
+             
             Console.ForegroundColor =ConsoleColor.Blue;
             Console.WriteLine("".PadRight(120, '~') + $"\n\t{section} \n" + "".PadRight(120, '~'));
         }
