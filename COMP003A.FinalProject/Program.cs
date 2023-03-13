@@ -80,7 +80,7 @@ namespace COMP003A.FinalProject
                 else
                 {
                     Gender = "Other";
-                }
+                } 
 
                 // Question secction
                 SectionMessageSeparator("There will now be 10 questions you need to answer in order for use to complete our plan for you.");
