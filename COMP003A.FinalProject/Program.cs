@@ -180,7 +180,7 @@ namespace COMP003A.FinalProject
                         break;
                     case 8:
                         Console.WriteLine($"\n{FirstName} here is was the team at BenaFit thinks is best for you.\nAmazing! You are very healthy.\n" +
-                        $"Since you are healthy lets stay with working out {Wdays} times a week.\nThen if you arent already watching your food intake" +
+                        $"Since you are healthy lets stay with working out {Wdays} times a week.\nThen if you arent already watching your food intake " +
                         $"we suggest that you start, since its the easiet way to maintain your health.\nThank you {FirstName} {lastName} for using BenaFit! Please report back in 6 months. Stay healthy!");
                         break;
                     case 9:
@@ -323,7 +323,7 @@ namespace COMP003A.FinalProject
             for (int i = 0; i < arr.Length; i++)
             {
                 Console.Write($"Questions:{Questions[i]}");
-                Console.WriteLine($"\nAnswers:{arr[i]}");
+                Console.WriteLine($"\nAnswer:{arr[i]}");
             }
             Console.ForegroundColor = ConsoleColor.DarkMagenta;
         }
