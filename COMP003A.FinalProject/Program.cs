@@ -132,7 +132,7 @@ namespace COMP003A.FinalProject
                     "Do you walk daily?","On average how many miles do you walk in a day?","How often do you eat fastfood out of the week?","How many calories do you eat in a day:",
                     "Is your goal to lose weight?","How many days out of the week are you available to work out?"};*/
 
-
+                     
 
                 SectionIntroSeparator($"Profile Report");
 
