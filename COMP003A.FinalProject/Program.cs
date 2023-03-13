@@ -291,7 +291,7 @@ namespace COMP003A.FinalProject
                    Console.WriteLine("ERROR: Please only use letters.");
                    Console.ForegroundColor=ConsoleColor.DarkMagenta;
                 }
-            }
+            } 
         }
         /// <summary>
         /// Will out put an Error notice if letters or special characters were entered and outputs error in red
