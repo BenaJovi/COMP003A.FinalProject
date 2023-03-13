@@ -65,6 +65,7 @@ namespace COMP003A.FinalProject
                         } 
                     }
                 } while (true);
+
                 // stores letter entered as the correct gender
                 Gletter = Convert.ToChar(Gender);
 
@@ -82,7 +83,6 @@ namespace COMP003A.FinalProject
                 }
 
                 // Question secction
-
                 SectionMessageSeparator("There will now be 10 questions you need to answer in order for use to complete our plan for you.");
                 Console.ForegroundColor = ConsoleColor.DarkMagenta;
 
@@ -109,19 +109,26 @@ namespace COMP003A.FinalProject
                 /*Q8*/
                 LoseWeight = WInputAnswer("\nIs your goal to lose weight? Answer:");
                 /*Q9*/
-                Wdays = NInputAnswer("\nHow many days out of the week are you avaible to work out? Answer:");
+                Wdays = NInputAnswer("\nHow many days out of the week are you available to work out? Answer:");
                 days = Convert.ToInt16(Wdays);
 
+                // Arrays for questions and answers.
                 string[] QuestArray = new string[] { Wheight, Wweight, PhysicallyActive, DailyWalk, Wmiles, Wfastfood, Wcalorieintake, LoseWeight, Wdays };
                 string[] Questions = new string[] { "Please enter your height in Inches:", "Please enter your weight in pounds:","Would you say you are physically active?",
                     "Do you walk daily?","On average how many miles do you walk in a day?","How often do you eat fastfood out of the week?","How many calories do you eat in a day:",
-                    "Is your goal to lose weight?","\nHow many days out of the week are you avaible to work out?"};
+                    "Is your goal to lose weight?","\nHow many days out of the week are you available to work out?"};
+                // Header to let the user now this is their profile report
                 SectionIntroSeparator($"Profile Report");
+
                 Console.ForegroundColor= ConsoleColor.White;
+
+                // Returns the personal info that the user inputs at the beginning as well as the questions and answers.  
                 Console.WriteLine($"User:{FirstName} {lastName}\nAge:{age}\nGender:{Gender}");
 
+                // Prints the array for questions and the answers. 
                 printArray(QuestArray,Questions); 
 
+                // Header to let the user know the profile is built and there is one more question. 
                 SectionMessageSeparator("\t\tThis will be the last question and the evaluation will  be complete.");
                  
 
@@ -131,8 +138,9 @@ namespace COMP003A.FinalProject
                 Console.Write("On a scale from 1-10 (1 being poor and 10 being super healthy) how healthy do you think you are? Answer:");
                 Wscale = Console.ReadLine();
                 scale = Convert.ToInt16(Wscale);
+
                 // the start of the switch statement 1-10 
-                Console.ForegroundColor= ConsoleColor.Cyan;
+                Console.ForegroundColor= ConsoleColor.Cyan;           // Switch statement will generate fitness plan based on what you feel your current health is at. 
                 switch (scale) 
                 {
                     case 1:
@@ -189,7 +197,7 @@ namespace COMP003A.FinalProject
             }
         }
         /// <summary>
-        /// Section Header 
+        /// Section Header for short text or long text
         /// </summary>
         /// <param name="section"></param>
         static void SectionIntroSeparator(string section)
@@ -241,7 +249,7 @@ namespace COMP003A.FinalProject
             }
         }
         /// <summary>
-        /// Checks if the Birthyear is valid
+        /// Checks if the Birthyear is valid and outputs error in red
         /// </summary>
         /// <param name="BirthYear"></param>
         /// <returns></returns>
@@ -261,7 +269,7 @@ namespace COMP003A.FinalProject
         }
 
         /// <summary>
-        /// Will out put an Error notice if numbers or special characters were entered.
+        /// Will out put an Error notice if numbers or special characters were entered and outputs error in red
         /// </summary>
         /// <param name="question"></param>
         /// <param name="error"></param>
@@ -286,7 +294,7 @@ namespace COMP003A.FinalProject
             }
         }
         /// <summary>
-        /// Will out put an Error notice if letters or special characters were entered.
+        /// Will out put an Error notice if letters or special characters were entered and outputs error in red
         /// </summary>
         /// <param name="question"></param>
         /// <returns></returns>
@@ -309,7 +317,7 @@ namespace COMP003A.FinalProject
                 }
             }
         }
-        // Prints out the answers to the questions as a report. NOTE: ADD NAME AGE GENDER
+        // Method that will print each questions and answer.
         static void printArray(string[] arr,string [] Questions)
         {
             for (int i = 0; i < arr.Length; i++)
