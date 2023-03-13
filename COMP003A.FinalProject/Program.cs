@@ -62,7 +62,7 @@ namespace COMP003A.FinalProject
                             Console.ForegroundColor = ConsoleColor.DarkRed;
                             Console.WriteLine("In order to go to the next question we need to know your gender. enter M,F, or O)\nif you do not wish to disclose this inforamtion please select O.\n");
                             Console.ForegroundColor = ConsoleColor.DarkMagenta;
-                        }
+                        } 
                     }
                 } while (true);
                 // stores letter entered as the correct gender
