@@ -68,17 +68,17 @@ namespace COMP003A.FinalProject
                 // stores letter entered as the correct gender
                 Gletter = Convert.ToChar(Gender);
 
-                if (Gletter=='m')
+                if (Gletter == 'm')
                 {
-                    Gender="Male";
+                    Gender = "Male";
                 }
-                else if (Gletter=='f')
+                else if (Gletter == 'f')
                 {
-                    Gender="Female";
+                    Gender = "Female";
                 }
                 else
                 {
-                    Gender="Other";
+                    Gender = "Other";
                 }
 
                 // Question secction
@@ -113,11 +113,14 @@ namespace COMP003A.FinalProject
                 days = Convert.ToInt16(Wdays);
 
                 string[] QuestArray = new string[] { Wheight, Wweight, PhysicallyActive, DailyWalk, Wmiles, Wfastfood, Wcalorieintake, LoseWeight, Wdays };
-
+                string[] Questions = new string[] { "Please enter your height in Inches:", "Please enter your weight in pounds:","Would you say you are physically active?",
+                    "Do you walk daily?","On average how many miles do you walk in a day?","How often do you eat fastfood out of the week?","How many calories do you eat in a day:",
+                    "Is your goal to lose weight?","\nHow many days out of the week are you avaible to work out?"};
                 SectionIntroSeparator($"Profile Report");
                 Console.ForegroundColor= ConsoleColor.White;
                 Console.WriteLine($"User:{FirstName} {lastName}\nAge:{age}\nGender:{Gender}");
-                printArray(QuestArray); 
+
+                printArray(QuestArray,Questions); 
 
                 SectionMessageSeparator("\t\tThis will be the last question and the evaluation will  be complete.");
                  
@@ -169,7 +172,7 @@ namespace COMP003A.FinalProject
                         break;
                     case 8:
                         Console.WriteLine($"\n{FirstName} here is was the team at BenaFit thinks is best for you.\nAmazing! You are very healthy.\n" +
-                        $"Since you are healthy lets stay with working out {Wdays} a week.\nThen if you arent already watching your food intake" +
+                        $"Since you are healthy lets stay with working out {Wdays} times a week.\nThen if you arent already watching your food intake" +
                         $"we suggest that you start, since its the easiet way to maintain your health.\nThank you {FirstName} {lastName} for using BenaFit! Please report back in 6 months. Stay healthy!");
                         break;
                     case 9:
@@ -307,11 +310,12 @@ namespace COMP003A.FinalProject
             }
         }
         // Prints out the answers to the questions as a report. NOTE: ADD NAME AGE GENDER
-        static void printArray(string[] arr)
+        static void printArray(string[] arr,string [] Questions)
         {
             for (int i = 0; i < arr.Length; i++)
             {
-                Console.WriteLine($"Answers:{arr[i]}");
+                Console.Write($"Questions:{Questions[i]}");
+                Console.WriteLine($"\nAnswers:{arr[i]}");
             }
             Console.ForegroundColor = ConsoleColor.DarkMagenta;
         }
