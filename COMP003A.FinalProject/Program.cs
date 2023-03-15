@@ -26,7 +26,7 @@ namespace COMP003A.FinalProject
             // convert to int
             string wHeight; string wWeight; string wCalorieIntake; string wFastFood; string wMiles; string wScale; // **TODO: by convention, variable names should be in camelCase except for constant or private variables
 
-            int fastFood; int height; int weight; int scale; int days; int calorieIntake; int miles; // **TODO: by convention, variable names should be in camelCase except for constant or private variables
+             int scale;  // **TODO: by convention, variable names should be in camelCase except for constant or private variables
 
             //Ask the user for their name in only letters.
             FirstName = WInputAnswer("Please enter your first name: ");
@@ -91,35 +91,30 @@ namespace COMP003A.FinalProject
                 // Question array
                 /*Q1*/
                 wHeight = NInputAnswer("Please enter your height in Inches:"); // TODO (optional): should this input allow 0 as an entry?
-                height = Convert.ToInt16(wHeight);
                 /*Q2*/
                 wWeight = NInputAnswer("\nPlease enter your weight in pounds:"); // TODO (optional): should this input allow 0 as an entry?
-                weight = Convert.ToInt16(wWeight);
                 /*Q3*/
                 physicallyActive = WInputAnswer("\nWould you say you are physically active? Answer:"); // TODO (optional): limit the responses to yes or no
                 /*Q4*/
                 dailyWalk = WInputAnswer("\nDo you walk daily? Answer:"); // TODO (optional): limit the responses to yes or no
                 /*Q5*/
                 wMiles = NInputAnswer("\nOn average how many miles do you walk in a day? Answer:");
-                miles = Convert.ToInt16(wMiles);
                 /*Q6*/
                 wFastFood = NInputAnswer("\nHow often do you eat fastfood out of the week? Answer:");
-                fastFood = Convert.ToInt16(wFastFood);
                 /*Q7*/
                 wCalorieIntake = NInputAnswer("\nHow many calories do you eat in a day:"); // TODO (optional): should this input allow 0 as an entry?
-                calorieIntake = Convert.ToInt16(wCalorieIntake);
                 /*Q8*/
                 loseWeight = WInputAnswer("\nIs your goal to lose weight? Answer:"); // TODO (optional): limit the responses to yes or no
                 /*Q9*/
                 wDays = NInputAnswer("\nHow many days out of the week are you available to work out? Answer:");
-                days = Convert.ToInt16(wDays);  // TODO (optional): should this input allow > 7 as an entry?
+                  // TODO (optional): should this input allow > 7 as an entry?
 
                 // Arrays for questions and answers.
                 string[] responses = new string[] { wHeight, wWeight, physicallyActive, dailyWalk, wMiles, wFastFood, wCalorieIntake, loseWeight, wDays }; // TODO: name this variable more appropriately (e.g., responses)
-                string[] Questions = new string[] { "Please enter your height in Inches:", "Please enter your weight in pounds:","Would you say you are physically active?",
-                    "Do you walk daily?","On average how many miles do you walk in a day?","How often do you eat fastfood out of the week?","How many calories do you eat in a day:",
-                    "Is your goal to lose weight?","How many days out of the week are you available to work out?"}; // TODO: you should be using this data structure in the above section. otherwise, it is simply redundant
-                // Header to let the user now this is their profile report
+                                                                                                                                                           //string[] Questions = new string[] { "Please enter your height in Inches:", "Please enter your weight in pounds:","Would you say you are physically active?",
+                                                                                                                                                           //   "Do you walk daily?","On average how many miles do you walk in a day?","How often do you eat fastfood out of the week?","How many calories do you eat in a day:",
+                                                                                                                                                           //   "Is your goal to lose weight?","How many days out of the week are you available to work out?"}; // TODO: you should be using this data structure in the above section. otherwise, it is simply redundant
+              // Header to let the user now this is their profile report
                 SectionIntroSeparator($"Profile Report");
 
                 Console.ForegroundColor = ConsoleColor.White;
@@ -128,7 +123,8 @@ namespace COMP003A.FinalProject
                 Console.WriteLine($"User:{FirstName} {lastName}\nAge:{age}\nGender:{gender}");
 
                 // Prints the array for questions and the answers. 
-                printArray(responses, Questions);
+                
+                printArray(responses);
 
                 // Header to let the user know the profile is built and there is one more question. 
                 SectionMessageSeparator("\t\tThis will be the last question and the evaluation will  be complete.");
@@ -177,7 +173,7 @@ namespace COMP003A.FinalProject
                         break;
                     case 7:
                         Console.WriteLine($"\n{FirstName} here is was the team at BenaFit thinks is best for you.\nYou are awesome! Great job on keeping yourself healthy, this is right where we want to be.\n" +
-                        $"For you {wDays} times a week is best and since we are at {weight} lets try cutting 5lbs.\nThe easiest way to maintain this level is" +
+                        $"For you {wDays} times a week is best and since we are at {wWeight} lets try cutting 5lbs.\nThe easiest way to maintain this level is" +
                         $"cutting out unhealthy food options and increasing our healthy calories.\nThank you {FirstName} {lastName} for using BenaFit! Please report back in 6 months. Stay healthy!");
                         break;
                     case 8:
@@ -323,16 +319,24 @@ namespace COMP003A.FinalProject
 
         // TODO: add xml comments here
         // Method that will print each questions and answer.
-        static void printArray(string[] arr, string[] Questions) // TODO: by convention, methods should be in PascalCase
+        /// <summary>
+        /// This method will print the array of questioins with answers. 
+        /// </summary>
+        /// <param name="answers"></param>
+        static void printArray(string[] answers) // TODO: by convention, methods should be in PascalCase
         {
             // TODO: include the question and response number (e.g., Question 1... Response 1... etc...)
-            for (int i = 0; i < arr.Length; i++)
+            for (int i = 0; i < answers.Length; i++)
             {
-                Console.Write($"Questions:{Questions[i]}");
-                Console.WriteLine($"\nAnswer:{arr[i]}");
+
+                Console.Write("Question {0}: ", i + 1);
+                Console.WriteLine("\nRepsonse {0}: {1}", i + 1, answers[i]);
             }
             Console.ForegroundColor = ConsoleColor.DarkMagenta;
         }
-    }
+
+        }
+
+    
 }
 
