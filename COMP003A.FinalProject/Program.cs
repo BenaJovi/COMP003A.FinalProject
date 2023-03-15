@@ -94,9 +94,9 @@ namespace COMP003A.FinalProject
                 /*Q2*/
                 wWeight = NInputAnswer("\nPlease enter your weight in pounds:"); // TODO (optional): should this input allow 0 as an entry?
                 /*Q3*/
-                physicallyActive = WInputAnswer("\nWould you say you are physically active? Answer:"); // TODO (optional): limit the responses to yes or no
+                physicallyActive = YesOrNo("\nWould you say you are physically active? Answer:"); // TODO (optional): limit the responses to yes or no
                 /*Q4*/
-                dailyWalk = WInputAnswer("\nDo you walk daily? Answer:"); // TODO (optional): limit the responses to yes or no
+                dailyWalk = YesOrNo("\nDo you walk daily? Answer:"); // TODO (optional): limit the responses to yes or no
                 /*Q5*/
                 wMiles = NInputAnswer("\nOn average how many miles do you walk in a day? Answer:");
                 /*Q6*/
@@ -104,7 +104,7 @@ namespace COMP003A.FinalProject
                 /*Q7*/
                 wCalorieIntake = NInputAnswer("\nHow many calories do you eat in a day:"); // TODO (optional): should this input allow 0 as an entry?
                 /*Q8*/
-                loseWeight = WInputAnswer("\nIs your goal to lose weight? Answer:"); // TODO (optional): limit the responses to yes or no
+                loseWeight = YesOrNo("\nIs your goal to lose weight? Answer:"); // TODO (optional): limit the responses to yes or no
                 /*Q9*/
                 wDays = NInputAnswer("\nHow many days out of the week are you available to work out? Answer:");
                   // TODO (optional): should this input allow > 7 as an entry?
@@ -334,6 +334,30 @@ namespace COMP003A.FinalProject
             }
             Console.ForegroundColor = ConsoleColor.DarkMagenta;
         }
+        
+         static YesOrNo (string question)
+        {
+            string answer;
+            while (true)
+            {
+                Console.Write(question);
+                answer = Console.ReadLine();
+                if (InputCheck(answer))
+                    {
+                        answer = answer.ToLower();
+                        if (answer == "yes" || answer == "no")
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            // allows the user to retry and enter a correct answer.
+                            Console.ForegroundColor = ConsoleColor.DarkRed;
+                            Console.WriteLine("Please only answer yes or no.n");
+                            Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                        }
+                    }
+        
 
         }
 
