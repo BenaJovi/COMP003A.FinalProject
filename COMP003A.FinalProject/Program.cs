@@ -21,7 +21,7 @@ namespace COMP003A.FinalProject
             string wScale;
             int scale;
 
-            //Ask the user for their name in only letters.
+            //Ask the user for their name in only letters. 
             firstName = WInputAnswer("Please enter your first name: ");
             lastName = WInputAnswer("Please enter your last name: ");
 
